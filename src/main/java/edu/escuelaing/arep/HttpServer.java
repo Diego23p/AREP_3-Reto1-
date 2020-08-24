@@ -49,7 +49,7 @@ public class HttpServer {
 	       Matcher matcher = null;
 		   
 		   while ((inputLine = in.readLine()) != null) {
-		      System.out.println("Recibí: " + inputLine);
+		      System.out.println("Recibi: " + inputLine);
 		      stringBuilder.append(inputLine);
 		      if (!in.ready()) {
 		    	  matcher = pattern.matcher(stringBuilder.toString());
@@ -79,7 +79,7 @@ public class HttpServer {
 	  
 	  String path = "src/main/resources/";
       String ext = FilenameUtils.getExtension(req);
-      System.out.println("Extención: "+ext);
+      System.out.println("Extencion: "+ext);
       
       if (ext.equals("jpg") || ext.equals("png")) {
     	  path+="img/";
@@ -96,7 +96,7 @@ public class HttpServer {
 				fis.read(data);
 				fis.close();
 	                      
-	             // Cabeceras con la info de imágen ya sea png o jpg
+	            // Cabeceras con la info de imagen (ya sea png o jpg)
 				DataOutputStream binaryOut = new DataOutputStream(clientSocket.getOutputStream());
 				binaryOut.writeBytes("HTTP/1.0 200 OK\r\n");
 				binaryOut.writeBytes("Content-Type: image/"+ext+"\r\n");
